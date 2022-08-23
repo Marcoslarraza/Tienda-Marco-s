@@ -1,6 +1,7 @@
 import './App.css'
 import Navbar from './components/Navbar';
-
+// You can specify which plugins you need
+import { } from 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
