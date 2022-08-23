@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import Navbar from './components/Navbar';
+import * as bootstrap from 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
+
+  let baner= "Las mejores promos de la región";
   return (
+    <>
+        <Navbar />
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          PizzaUy
-        </p>
-        <p>El mejor lugar, las mejores pizzas de la región</p>
-        <a
-          className="App-link"
-          href="https://instagram.com/marcoslarraza/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Visita nuestro sitio 
-        </a>
-      </header>
+
+      
+
+      <h1 className='texto'>PizzaUy  {baner}</h1>
+      <br/>
+      <input placeholder='Encontrá lo que buscas'/>
     </div>
+    </>
   );
 }
 
