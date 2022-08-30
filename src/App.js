@@ -3,14 +3,14 @@ import './App.css'
 import Navbar from './components/Navbar';
 import { } from 'bootstrap'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import itemListContainers from './containers/itemListContainer';
+import ItemListContainers from './containers/ItemListContainer';
 
 function App() {
 
   return (
     <>
     <Navbar/>
-    <itemListContainers greeting={'Hello, World'}/>
+    <ItemListContainers greeting={'Hello, World'}/>
    </>
     
   );

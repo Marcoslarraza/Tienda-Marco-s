@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.css';
 
-const itemListContainer = ({greeting }) => {
+const ItemListContainer = ({greeting }) => {
   return (
     <div>
       <h1>{greeting}</h1>
@@ -9,4 +9,4 @@ const itemListContainer = ({greeting }) => {
   )
 }
 
-export default itemListContainer;
+export default ItemListContainer;
