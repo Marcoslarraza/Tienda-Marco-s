@@ -9,8 +9,10 @@ function App() {
 
   return (
     <>
-    <Navbar/>
-    <ItemListContainers greeting={'Hello, World'}/>
+    <Navbar
+    />
+    <ItemListContainers greeting={'Agrega tus productos al carrito'}/>
+    
    </>
     
   );

@@ -1,0 +1,9 @@
+.titulo{
+    margin-left: '50px';
+
+    background-color: beige;
+    border: solid black;
+    color: black;
+    margin-right: auto;
+    width: auto;
+}

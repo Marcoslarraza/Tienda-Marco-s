@@ -1,0 +1,39 @@
+.navegacion{
+
+    margin: 0;
+    margin-left: 50px;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    width: 100px;
+    height: 320px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    background: #ef4b4c;
+    
+}
+
+    
+
+.boton{
+    display: flex;
+    justify-content:space-around;
+    border-radius: 50%;
+    font-size: 2rem;
+}
+.cart{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 125px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border-radius: 15%;
+    background-color: aqua;
+}
