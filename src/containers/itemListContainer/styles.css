@@ -1,10 +1,11 @@
 .titulo{
     margin-left: '50px';
-
-    background-color: #b1dbb8;
-    border: solid black;
+    border: solid rgb(3, 3, 3);
     color: black;
     font-family:Georgia, 'Times New Roman', Times, serif;
     width: auto;
-    
+    background-color: #d0d58d;
+    background-attachment: fixed;
+    background-size: cover;
 }
+

@@ -1,6 +1,5 @@
 import React from 'react';
 import './styles.css';
-import { products } from '../../data/products';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import ItemList from '../../components/ItemList';
@@ -14,15 +13,16 @@ const ItemListContainer = ({greeting}) => {
   useEffect(()=> {
     
     (async ()=> {
-    const obtenerProductos = new Promise ((accept, reject)=> {
+    /* const obtenerProductos = new Promise ((accept, reject)=> {
         setTimeout(()=> {
           accept(products)
         }, 3000);
-      })
+      }) */
       
 
         try {
-          const productos = await obtenerProductos;
+          const response = await fetch ("https://fakestoreapi.com/products");
+          const productos= await response.json();
           setProductos(productos);
         } catch (error) {
           console.log(error);
@@ -32,7 +32,10 @@ const ItemListContainer = ({greeting}) => {
 
   }, [])
   
-  //IFE (funcion autoinvocada)
+
+  
+
+  
 
   
 
