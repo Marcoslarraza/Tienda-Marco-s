@@ -5,7 +5,7 @@ const ItemList = ({products}) => {
   return (
     <div>
         {products.map(product => {
-            return <Item key={products.img} product={product}/> //agregar card de boostrap
+            return <Item key={product.id} product={product}/> //agregar card de boostrap
         })}
     </div>
   )

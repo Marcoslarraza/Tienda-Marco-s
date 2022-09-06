@@ -3,7 +3,7 @@ import './styles.css';
 import { products } from '../../data/products';
 import { useEffect } from 'react';
 import { useState } from 'react';
-
+import ItemList from '../../components/ItemList';
 
 
 const ItemListContainer = ({greeting}) => {
@@ -40,7 +40,8 @@ const ItemListContainer = ({greeting}) => {
 
   return (
     <div className='titulo'>
-
+       <ItemList products={productos}/>
+      
     </div>
   )
 }
