@@ -1,9 +1,10 @@
 .titulo{
     margin-left: '50px';
 
-    background-color: beige;
+    background-color: #b1dbb8;
     border: solid black;
     color: black;
-    margin-right: auto;
+    font-family:Georgia, 'Times New Roman', Times, serif;
     width: auto;
+    
 }

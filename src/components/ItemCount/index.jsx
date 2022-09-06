@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from "react";
 import './styles.css';
 
+
+
 const ItemCount = ({stock, initial, onAdd}) => {
 
     const [count, setCount] = useState(initial);
@@ -9,7 +11,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
         if(count < stock) {
             setCount(count+1);
         } else {
-            alert("No hay suficiente stock disponible");
+            alert("Sin stock disponible");
         }
     }
 
@@ -36,12 +38,18 @@ const ItemCount = ({stock, initial, onAdd}) => {
     }, [count]);
 
     return (
-    <div className='navegacion'>
-        <button className="boton" onClick={handleDecrement}>-</button>
-        <h2>{count}</h2>
-        <button className="boton" onClick={handleAdd}>+</button>
-        <br /> <br />
-        <button className="cart" onClick={addCart}>Agregar al carrito</button>
+    <div className="btn-group" role="group" aria-label="Basic mixed styles example" id="div">
+        <button type="button" className="btn btn-danger" disabled={count<=1} onClick={handleDecrement} id="boton">-</button>
+        {/* Disabled hace que mi contador se desactive cuando llega a 1 para que no se agreguen numeros negativos al carrito */}
+
+
+        <h2 type="button" className="btn btn-warning" id="boton">{count}</h2>
+
+
+        <button type="button" className="btn btn-success"  onClick={handleAdd} id="boton">+</button> {/* lo mismo podria hacerce con el boton de incremento, pero ahi tendriamos que poner: disabled={count >=stock} o sea que cuando el numero sea mayor o igual al stock no se pueda agregar mas */}
+        
+
+        <button type="button" className="btn btn-primary" id="agregaralcarrito" onClick={addCart} >Agregar al carrito</button>
     </div>
     );
 };
