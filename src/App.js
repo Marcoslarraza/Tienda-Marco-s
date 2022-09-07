@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import { } from 'bootstrap'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemListContainers from './containers/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 function App() {
 
@@ -11,8 +12,8 @@ function App() {
     <>
     <Navbar
     />
-    <ItemListContainers greeting={'Agrega tus productos al carrito'}/>
-    
+    <ItemListContainers greeting={'Agrega tus productos al carrito'} className="contenedor"/>
+    <ItemDetailContainer/>
    </>
     
   );

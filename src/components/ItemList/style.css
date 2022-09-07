@@ -1,0 +1,9 @@
+.contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.prod{
+    width: 18rem;
+}

@@ -4,36 +4,28 @@ import CartWidget from '../CartWidget'
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
         <a className="navbar-brand" href="/">Marco´s </a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNavDropdown">
+        <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">Home</a>
+              <a className="nav-link active" aria-current="page" href="/">Inicio</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">Conoce nuestro menú</a>
+              <a className="nav-link active" href="/">Ofertas</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">About Us</a>
+              <a className="nav-link active" href="/">Contáctanos</a>
             </li>
-            <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Ofertas con tiempo limitado
-              </a>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a className="dropdown-item" href="/">Provenzal</a></li>
-                <li><a className="dropdown-item" href="/">Calabresa</a></li>
-                <li><a className="dropdown-item" href="/">Napolitana</a></li>
-              </ul>
-            </li>
-            <CartWidget/>
+            
+            
           </ul>
         </div>
+        <CartWidget />
       </div>
     
     </nav>

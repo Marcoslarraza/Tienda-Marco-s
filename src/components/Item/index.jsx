@@ -1,6 +1,7 @@
-
 import React from 'react'
 import './styles.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 
@@ -9,23 +10,18 @@ import './styles.css'
 
 const Item = ({product}) => {
   return (
-    
-    <div className='flex'>
 
-    
+      <div className='card '  id='produ'>
 
+          <img src={product.image}  alt="imagen" className="card-img-top"/>
+          <h5 className="card-title">{product.title}</h5>
+          <h6> Precio $ {product.price}</h6>
+          
 
-    <div className='card '  id='produ'>
-    <img src={product.image} width={250} alt="imagen"/>
-    <h3>{product.title}</h3>
-    <h4> Precio $ {product.price}</h4>
-    
+          
 
-    
-
-    </div>
-    
-    </div>
+      </div>
+  
     
   )
 }

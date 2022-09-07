@@ -1,10 +1,28 @@
 #produ{
-    margin-left: 50px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    text-justify:distribute;
+    
     gap: 30px;
+    border:groove;
+    margin-top: 50px;
     
 }
+#produ img{
+    width: 200px;
+    height: 250px;
+}
+
 .card{
 width: 19rem;
 gap: 30px;
-
+}
+.img{
+    display: flex;
+    justify-content: center;
+}
+.card-title{
+    text-align: center;
+    font-family: 'Fira Sans Condensed', sans-serif;
 }
