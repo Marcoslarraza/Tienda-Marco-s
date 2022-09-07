@@ -39,17 +39,17 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
     return (
     <div className="btn-group" role="group" aria-label="Basic mixed styles example" id="div">
-        <button type="button" className="btn btn-danger" disabled={count<=1} onClick={handleDecrement} id="boton">-</button>
+        <button type="button" className="btn btn-dark" disabled={count<=1} onClick={handleDecrement} id="boton">-</button>
         {/* Disabled hace que mi contador se desactive cuando llega a 1 para que no se agreguen numeros negativos al carrito */}
 
 
-        <h2 type="button" className="btn btn-warning" id="boton">{count}</h2>
+        <h2 type="button" className="btn btn-success" id="boton">{count}</h2>
 
 
-        <button type="button" className="btn btn-success"  onClick={handleAdd} id="boton">+</button> {/* lo mismo podria hacerce con el boton de incremento, pero ahi tendriamos que poner: disabled={count >=stock} o sea que cuando el numero sea mayor o igual al stock no se pueda agregar mas */}
+        <button type="button" className="btn btn-dark"  onClick={handleAdd} id="boton">+</button> {/* lo mismo podria hacerce con el boton de incremento, pero ahi tendriamos que poner: disabled={count >=stock} o sea que cuando el numero sea mayor o igual al stock no se pueda agregar mas */}
         
 
-        <button type="button" className="btn btn-primary" id="agregaralcarrito" onClick={addCart} >Agregar al carrito</button>
+        <button type="button" className="btn btn-info" id="agregaralcarrito" onClick={addCart} >Agregar al carrito</button>
     </div>
     );
 };
