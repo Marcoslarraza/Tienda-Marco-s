@@ -3,8 +3,8 @@ import './App.css'
 import Navbar from './components/Navbar';
 import { } from 'bootstrap'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemListContainers from './containers/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetailContainer';
+/* import ItemListContainers from './containers/ItemListContainer';
+ */import ItemDetailContainer from './containers/ItemDetailContainer';
 
 function App() {
 
@@ -12,11 +12,11 @@ function App() {
     <>
     <Navbar
     />
-    <ItemListContainers greeting={'Agrega tus productos al carrito'} className="contenedor"/>
-    <ItemDetailContainer/>
+{/*     <ItemListContainers greeting={'Agrega tus productos al carrito'} className="contenedor"/>
+ */}    <ItemDetailContainer/>
    </>
     
   );
 }
-
+  
 export default App;

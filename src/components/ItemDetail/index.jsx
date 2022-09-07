@@ -1,15 +1,13 @@
-
-
 import React from 'react'
-import './styles.css';
-import'bootstrap/dist/css/bootstrap.min.css';
+import ItemCount from '../ItemCount'
 
-
-
-
-export const ItemDetail = () => {
+const ItemDetail = ({product}) => {
   return (
-    <h1>{}</h1>
+    <div>
+        <h4>{product.title}</h4>
+        <img src={product.image} alt="product-detail" width={250}/>
+        <ItemCount/>
+    </div>
   )
 }
 
