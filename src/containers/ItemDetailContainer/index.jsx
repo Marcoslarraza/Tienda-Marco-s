@@ -41,6 +41,7 @@ const ItemDetailContainer = () => {
 
   return <ItemDetail product={productDetail}/>;
   
+  
 };
 
 export default ItemDetailContainer;

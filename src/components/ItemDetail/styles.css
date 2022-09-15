@@ -1,5 +1,5 @@
 #cuerpo{
-    background-color: rgb(134, 184, 227);
+    background-color: #f2c98f;
     width: auto;
     display: flex;
     
@@ -15,4 +15,8 @@
 .detalle{
     margin-left: 50px;
     width: 40rem;
+}
+.btn-success{
+    color: white;
+   margin-block-end: 50px;
 }

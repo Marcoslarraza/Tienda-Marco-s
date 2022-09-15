@@ -11,7 +11,7 @@ import {
   Route,
 } from "react-router-dom";
 import NotFound from './components/NotFound';
-
+import Cart  from './containers/cartContainer';
 
 
 
@@ -28,6 +28,7 @@ function App() {
           <Route path='/' element={<ItemListContainers/>}/>
           <Route path='/category/:categoryId' element={<ItemListContainers/>}/>
           <Route path='/detail/:productId' element={<ItemDetailContainer/>}/>
+          <Route path='/cart' element={<Cart/>}/>
           <Route path='*' element={<NotFound/>}/>
        </Routes>
       

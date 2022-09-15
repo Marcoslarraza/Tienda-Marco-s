@@ -28,6 +28,7 @@ const ItemListContainer = ({greeting}) => {
 
           }
           else{
+            
 
           const response = await fetch ("https://fakestoreapi.com/products");
           const productos= await response.json();
@@ -53,9 +54,11 @@ const ItemListContainer = ({greeting}) => {
   console.log(productos);
 
   return (
+    
     <div className='titulo'>
+      
        <ItemList products={productos}/>
-       
+
       
     </div>
   )

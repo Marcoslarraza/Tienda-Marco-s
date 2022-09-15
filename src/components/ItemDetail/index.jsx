@@ -1,9 +1,29 @@
-import React from 'react'
+import React, {useState} from 'react'
 import ItemCount from '../ItemCount'
 import './styles.css'
+import { useNavigate } from 'react-router-dom';
 
 const ItemDetail = ({product}) => {
+
+
+  const [qty, setQty]= useState(0);
+  const navigate= useNavigate();
+
+  const addCart= (quantity)=>{
+    setQty(quantity);
+
+
+    
+
+  }
+  const handleFinish = () => {
+    navigate('/cart');
+
+  }
+  console.log(qty);
+
   return (
+
     <div id='cuerpo'>
         <img src={product.image} alt="product-detail" width={250}/>
 
@@ -16,7 +36,8 @@ const ItemDetail = ({product}) => {
             <h6>{product.category}</h6>
             <h4>{product.count}</h4>
             <br /> <br /><br />
-            <ItemCount/>
+           {!qty ? ( <ItemCount stock={13} initial={1} onAdd={addCart}/> ):
+           ( <button  className='btn-success btn-outline-dark btn-lg ' onClick={handleFinish}>Finalizar compra</button>)}
             
         </div>
     </div>
