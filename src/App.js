@@ -12,6 +12,7 @@ import {
 } from "react-router-dom";
 import NotFound from './components/NotFound';
 import Cart  from './containers/cartContainer';
+import ShopProvider from './context/ShopProvider';
 
 
 
@@ -20,19 +21,19 @@ import Cart  from './containers/cartContainer';
 function App() {
 
   return (
-    <BrowserRouter>
-
-      <Navbar/>
+    <ShopProvider>
+      <BrowserRouter>
+        <Navbar/>        
+        <Routes>
+            <Route path='/' element={<ItemListContainers/>}/>
+            <Route path='/category/:categoryId' element={<ItemListContainers/>}/>
+            <Route path='/detail/:productId' element={<ItemDetailContainer/>}/>
+            <Route path='/cart' element={<Cart/>}/>
+            <Route path='*' element={<NotFound/>}/>
+        </Routes>
         
-      <Routes>
-          <Route path='/' element={<ItemListContainers/>}/>
-          <Route path='/category/:categoryId' element={<ItemListContainers/>}/>
-          <Route path='/detail/:productId' element={<ItemDetailContainer/>}/>
-          <Route path='/cart' element={<Cart/>}/>
-          <Route path='*' element={<NotFound/>}/>
-       </Routes>
-      
-    </BrowserRouter>
+      </BrowserRouter>
+    </ShopProvider>
     
   );
 }

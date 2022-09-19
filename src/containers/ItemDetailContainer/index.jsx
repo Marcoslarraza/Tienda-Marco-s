@@ -10,8 +10,8 @@ const ItemDetailContainer = () => {
   
 
     const {productId}= useParams();
-    console.log(productId);
-
+/*     console.log(productId);
+ */
   //Gestionar la obtención de la data del detalle
   useEffect(()=> {
     
@@ -37,8 +37,8 @@ const ItemDetailContainer = () => {
 
   }, [productId])
 
-  console.log(productDetail);
-
+/*   console.log(productDetail);
+ */
   return <ItemDetail product={productDetail}/>;
   
   

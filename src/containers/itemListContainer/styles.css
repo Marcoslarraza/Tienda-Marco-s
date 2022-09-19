@@ -3,7 +3,9 @@
     color: black;
     font-family:Georgia, 'Times New Roman', Times, serif;
     width: auto;
-    background-color: #f2c98f;
+    background-image: url(https://images.unsplash.com/photo-1561715276-a2d087060f1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80);
+
+    
     background-attachment: fixed;
     background-size: cover;
 }

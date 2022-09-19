@@ -11,8 +11,8 @@ const ItemListContainer = ({greeting}) => {
   const [productos, setProductos] = useState([])
 
   const {categoryId}= useParams();
-  console.log(categoryId);
-
+/*   console.log(categoryId);
+ */
 
   useEffect(()=> {
     
@@ -51,8 +51,8 @@ const ItemListContainer = ({greeting}) => {
 
   
 
-  console.log(productos);
-
+/*   console.log(productos);
+ */
   return (
     
     <div className='titulo'>
