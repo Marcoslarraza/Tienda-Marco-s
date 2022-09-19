@@ -8,16 +8,31 @@ import './styles.css'
 
 const Cart = () => {
   return (
-    
-    <div className='boto'>
+    <div>
+      <div className='boto'>
+        <h1 >Carrito de compras</h1> 
+      </div>
+      
+      <div className="container">
+        
+        <div className="row">
+          
+            <main id="items" className="col-sm-10 row"></main>
+            
+              <aside clasNames="col-sm-10">
+                  <h2>Carrito</h2>
+                  
+                  <ul id="carrito" className="list-group"></ul>
+                  <hr/>
+                  
+                  <p className="text-right">Total: <span id="total"></span>&euro;</p>
+                  <button id="boton-vaciar" className="btn btn-danger">Vaciar</button>
+              </aside>
+        </div>
+      </div>
 
-       <h1 >Carrito</h1> 
-       <div>
-       <button className='btn-success'>Eliminar item</button>
-       </div>
 
     </div>
-  
     
   )
 }
