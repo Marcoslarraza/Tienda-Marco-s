@@ -1,9 +1,15 @@
 import React from 'react';
 import './styles.css'
 import { Link } from 'react-router-dom'
+import { Shop } from '../../context/ShopProvider';
+import { useContext } from 'react';
+
+
 
 
 const Cart = () => {
+
+  const {clearCart, removeItem}= useContext(Shop)
 
 
   return (
@@ -25,8 +31,12 @@ const Cart = () => {
             
             <p className="text-right">Total: <span id="total"></span>&euro;</p>
 
+            <button id="boton-vaciar" className="btn btn-danger" onClick={removeItem}>Eliminar Producto</button> <br/> <br/>
 
-            <button id="boton-vaciar" className="btn btn-danger">Vaciar</button>
+
+            <button id="boton-vaciar" className="btn btn-danger" onClick={clearCart}>Vaciar</button>
+
+            <br/>
 
 
             <br/> <br/>
