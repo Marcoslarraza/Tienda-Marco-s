@@ -1,12 +1,11 @@
-import React from 'react'
+import React from 'react';
 import './styles.css'
-
-
-
-
+import { Link } from 'react-router-dom'
 
 
 const Cart = () => {
+
+
   return (
     <div>
       <div className='boto'>
@@ -25,7 +24,13 @@ const Cart = () => {
             <hr/>
             
             <p className="text-right">Total: <span id="total"></span>&euro;</p>
+
+
             <button id="boton-vaciar" className="btn btn-danger">Vaciar</button>
+
+
+            <br/> <br/>
+            <Link to='/' className="nav-link active" aria-current="page" >{<button className="btn btn-success" >Volver a la tienda</button>}</Link>
         </aside>
     </div>
 </div>

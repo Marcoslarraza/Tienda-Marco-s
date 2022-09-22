@@ -58,14 +58,7 @@ const ShopProvider = ({children}) => {
   console.log(cart);
     
   return (
-    <Shop.Provider value={{
-        
-        cart, 
-        addItem,
-        removeItem,
-        clearCart
-        
-        }}>
+    <Shop.Provider value={{cart, addItem, removeItem, clearCart }}>
 
         {children}
 
