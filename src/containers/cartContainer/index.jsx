@@ -16,6 +16,8 @@ const Cart = () => {
       <div className="alert alert-primary" role="alert">
   No hay elementos en el carrito
 </div>
+<Link to='/' className="nav-link active" aria-current="page" >{<button className="btn btn-success" >Volver a la tienda</button>}</Link>
+
       </>
     );
   }
@@ -63,7 +65,7 @@ const Cart = () => {
     
     })
   })
-
+  
   
   return (
     <div style={{ height: 600, width: '100%' }}>
@@ -74,8 +76,10 @@ const Cart = () => {
         rowsPerPageOptions={[10]}
         rowHeight={150}
         
+        
       />
-              
+      
+            <p>{totalPrice}</p>
             <Button onClick={clearCart} className="btn btn-danger" >Vaciar carrito</Button> 
             <Link to='/' className="nav-link active" aria-current="page" >{<button className="btn btn-success" >Volver a la tienda</button>}</Link>
             <Link to='/' className="nav-link active" aria-current="page" >{<button className="btn btn-info" >Terminar la compra</button>}</Link>

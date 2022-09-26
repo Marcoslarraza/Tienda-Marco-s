@@ -54,7 +54,7 @@ export  const Shop = createContext(null)
         //es para saber cuantos items o productos tengo en mi carrito
 
     const totalProducts= (id) =>cart.reduce((acumulador, productoActual)=> acumulador + productoActual.quantity, 0);
-    console.log(totalProducts);
+    //console.log(totalProducts);
 
     //Completar la lógica
     const removeItem = (itemToRemove) => {
@@ -68,7 +68,7 @@ export  const Shop = createContext(null)
 
 
 
-    console.log(act);
+    //console.log(act);
    //console.log(cart);
     
   return (
