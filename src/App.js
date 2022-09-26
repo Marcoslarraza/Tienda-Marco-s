@@ -17,7 +17,6 @@ import ShopProvider from './context/ShopProvider';
 
 
 
-
 function App() {
 
   return (
