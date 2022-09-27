@@ -9,7 +9,7 @@ import { act } from 'react-dom/test-utils';
 
 export  const Shop = createContext(null)
 
-//paso 2: crera el provider (proveedor ) que me envolvera a la app
+    //paso 2: crera el provider (proveedor ) que me envolvera a la app
 
  
  const ShopProvider = ({children}) => {
@@ -69,7 +69,7 @@ export  const Shop = createContext(null)
 
 
     //console.log(act);
-   //console.log(cart);
+   //console.log(...cart);
     
   return (
     <Shop.Provider value={{cart, addItem, removeItem, clearCart, totalPrice, totalProducts }}>

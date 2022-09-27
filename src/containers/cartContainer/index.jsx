@@ -5,18 +5,20 @@ import { Button } from '@mui/material';
 import { Link } from 'react-router-dom'
 
 
+
+
 const Cart = () => {
 
   
-
-  const {cart, removeItem, clearCart, totalPrice} = useContext(Shop);
+  
+  const {cart, removeItem, clearCart} = useContext(Shop);
   if (cart.length === 0) {
     return(
       <>
       <div className="alert alert-primary" role="alert">
   No hay elementos en el carrito
-</div>
-<Link to='/' className="nav-link active" aria-current="page" >{<button className="btn btn-success" >Volver a la tienda</button>}</Link>
+  </div>
+  <Link to='/' className="nav-link active" aria-current="page" >{<button className="btn btn-success" >Volver a la tienda</button>}</Link>
 
       </>
     );
@@ -47,7 +49,7 @@ const Cart = () => {
       renderCell: renderRemoveButton,
       width: 120,
     },
-    {field: 'Precio final', headerName: 'Precio total', width: 100},
+    
     
   ];
 
@@ -77,10 +79,8 @@ const Cart = () => {
         rowHeight={150}
         
         
-      />
-      
-            <p>{totalPrice}</p>
-            <Button onClick={clearCart} className="btn btn-danger" >Vaciar carrito</Button> 
+      />     
+             <Button onClick={clearCart} className="btn btn-danger" >Vaciar carrito</Button> 
             <Link to='/' className="nav-link active" aria-current="page" >{<button className="btn btn-success" >Volver a la tienda</button>}</Link>
             <Link to='/' className="nav-link active" aria-current="page" >{<button className="btn btn-info" >Terminar la compra</button>}</Link>
         

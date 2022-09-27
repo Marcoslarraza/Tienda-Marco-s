@@ -17,6 +17,7 @@ import ShopProvider from './context/ShopProvider';
 
 
 
+
 function App() {
 
   return (
@@ -28,7 +29,7 @@ function App() {
             <Route path='/category/:categoryId' element={<ItemListContainers/>}/>
             <Route path='/detail/:productId' element={<ItemDetailContainer/>}/>
             <Route path='/cart' element={<Cart/>}/>
-            <Route path='*' element={<NotFound/>}/>
+            <Route path='*' element={<NotFound/>} />
         </Routes>
         
       </BrowserRouter>

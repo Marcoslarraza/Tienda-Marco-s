@@ -4,7 +4,7 @@ import './styles.css';
 
 
 
-const ItemCount = ({stock, initial, onAdd}) => {
+export const ItemCount = ({stock, initial, onAdd}) => {
 
     const [count, setCount] = useState(initial);
 
