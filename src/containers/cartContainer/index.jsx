@@ -77,7 +77,7 @@ const Cart = () => {
   
   
   return (
-    <div style={{ height: 600, width: '100%' }}>
+    <div style={{ height: 500, width: '100%' }}>
       <DataGrid
         rows={filas}
         columns={columns}
@@ -91,6 +91,9 @@ const Cart = () => {
              <div className="alert alert-primary" role="alert">
                  Resumen de Compra
                  <h3 className="cart-view-total">Total: $ { totalPrice() }</h3>
+                 <br />
+                 <Link to='/' className="nav-link active" aria-current="page" >{<button className="btn btn-info" >Terminar la compra</button>}</Link>
+
               </div>
                
                 
@@ -98,10 +101,13 @@ const Cart = () => {
                 
 
              </>
-             <Button onClick={clearCart} className="btn btn-danger" >Vaciar carrito</Button> 
-            <Link to='/' className="nav-link active" aria-current="page" >{<button className="btn btn-success" >Volver a la tienda</button>}</Link>
-            <Link to='/' className="nav-link active" aria-current="page" >{<button className="btn btn-info" >Terminar la compra</button>}</Link>
-        
+             <div className="alert alert-warning" role="alert"  >
+
+                <Button onClick={clearCart} className="btn btn-danger active" >Vaciar carrito</Button> 
+                <Link to='/' className="nav-link active" aria-current="page" >{<button className="btn btn-success" >Volver a la tienda</button>}</Link>
+               
+
+             </div>
 
            
 
