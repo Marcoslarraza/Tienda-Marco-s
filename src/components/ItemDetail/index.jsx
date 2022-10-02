@@ -29,10 +29,9 @@ const ItemDetail = ({product}) => {
 
 
   }
-  console.log(qty);
 
   return (
-
+    
     <div id='cuerpo'>
         <img src={product.image} alt="product-detail" width={250}/>
 
@@ -43,9 +42,10 @@ const ItemDetail = ({product}) => {
             <br />
             <h2> $ {product.price}</h2>
             <h6>{product.category}</h6>
+            <h6>Stock: {product.stock}</h6>
             <h4>{product.count}</h4>
             <br /> <br /><br />
-           {!qty ? ( <ItemCount stock={13} initial={1} onAdd={addCart}/> ):
+           {!qty ? ( <ItemCount stock={product.stock} initial={1} onAdd={addCart}/> ):
            ( <button  className='btn-success btn-outline-dark btn-lg ' onClick={handleFinish}>Agregar al carrito</button>)}
             
         </div>

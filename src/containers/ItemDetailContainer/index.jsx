@@ -9,12 +9,14 @@ import { doc, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   const [productDetail, setProductDetail] = useState({})
+
   
 
   const {productId}= useParams();
 
   //Gestionar la obtención de la data del detalle
   useEffect(()=> {
+
     
         const querydb = getFirestore();
         const queryDoc = doc(querydb, 'products', productId );
@@ -26,8 +28,10 @@ const ItemDetailContainer = () => {
   }, [productId])
 
 
-  return <ItemDetail product={productDetail}/>;
+  return     <ItemDetail product={productDetail}/> ;
+
   
+
   
 };
 

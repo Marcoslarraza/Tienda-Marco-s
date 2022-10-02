@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react";
 import './styles.css';
-
-
+import swal from 'sweetalert';
 
 
 export const ItemCount = ({stock, initial, onAdd}) => {
@@ -12,7 +11,7 @@ export const ItemCount = ({stock, initial, onAdd}) => {
         if(count < stock) {
             setCount(count+1);
         } else {
-            alert("Sin stock disponible");
+            swal("No hay suficiente stock disponible");
         }
     }
 
@@ -31,11 +30,10 @@ export const ItemCount = ({stock, initial, onAdd}) => {
 
      
     useEffect(()=> {
-         console.log("Se montó el ItemCount");
+
     }, []);
 
     useEffect(()=> {
-        console.log("Se actualiza el estado!")
     }, [count]);
 
     return (

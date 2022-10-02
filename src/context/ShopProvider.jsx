@@ -1,7 +1,6 @@
 import React from 'react';
 import { createContext } from "react";
 import { useState } from 'react';
-import { act } from 'react-dom/test-utils';
 
 
 
@@ -47,14 +46,15 @@ export  const Shop = createContext(null)
 
         //precio total del carrito
     const totalPrice=()=>{
-        return cart.reduce((prev, act) => prev + act.quantity * act.price, 0)
+        return   cart.reduce((prev, act) => prev + act.quantity * act.price, 0)
+
         
     }
 
         //es para saber cuantos items o productos tengo en mi carrito
 
     const totalProducts= (id) =>cart.reduce((acumulador, productoActual)=> acumulador + productoActual.quantity, 0);
-    //console.log(totalProducts);
+    
 
     //Completar la lógica
     const removeItem = (itemToRemove) => {
@@ -63,13 +63,11 @@ export  const Shop = createContext(null)
     }
 
     const clearCart = () => { setCart([]);
-    //console.log(clearCart);
+   
 }
 
 
 
-    //console.log(act);
-   //console.log(...cart);
     
   return (
     <Shop.Provider value={{cart, addItem, removeItem, clearCart, totalPrice, totalProducts }}>

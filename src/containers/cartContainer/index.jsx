@@ -1,8 +1,15 @@
-import React, { useContext } from 'react'
+import React, { useContext} from 'react'
 import { Shop } from '../../context/ShopProvider';
 import { DataGrid } from '@mui/x-data-grid';
 import { Button } from '@mui/material';
 import { Link } from 'react-router-dom'
+import ordenGenerada from '../../services/generarOrden';
+import { collection, addDoc, getDoc } from "firebase/firestore";
+import {db} from '../../firebase/config';
+import { doc, updateDoc } from "firebase/firestore";
+import swal from 'sweetalert';
+
+
 
 
 
@@ -12,6 +19,7 @@ const Cart = () => {
   
   
   const {cart, removeItem, clearCart, totalPrice} = useContext(Shop);
+
 
 
       if (cart.length === 0) {
@@ -44,6 +52,38 @@ const Cart = () => {
         )
       }
 
+      const handleBuy = async () => {
+        const importeTotal = totalPrice();
+        const orden = ordenGenerada("Marcos", "markkusito@gmail.com", 3234567890, cart, importeTotal);
+        console.log(orden);
+
+        // Add a new document with a generated id.
+      const docRef = await addDoc(collection(db, "orders"), orden);
+
+      //Actualizamos el stock del producto
+      cart.forEach(async (productoEnCarrito) => {
+
+        //Primero accedemos a la referencia del producto
+        const productRef = doc(db, "products", productoEnCarrito.id);
+
+        //Llamamos al snapshot, llamando a firebase
+        const productSnap = await getDoc(productRef);
+
+        //En snapshot.data() nos devuelve la información del documento a actualizar
+        await updateDoc(productRef, {
+
+            stock: productSnap.data().stock - productoEnCarrito.quantity,
+        });
+    });
+
+    swal(`Gracias por tu compra, Se generó una orden con el ID: ${docRef.id}, te enviaremos los datos por email`);
+      //swal( `¡Muchas gracias por tu compra! Se generó la orden con el ID: ${docRef.id}` );
+
+         } 
+
+      
+      
+
 
   const columns = [
         { field: 'image', headerName: 'Imagen', width: 250, renderCell: renderImage},
@@ -66,7 +106,7 @@ const Cart = () => {
         filas.push({
           id: item.id,
           image: item.image,
-          title: item.title,
+          title: item.title, 
           quantity: item.quantity,
           remove: item,
           price: item.price * item.quantity
@@ -77,6 +117,8 @@ const Cart = () => {
   
   
   return (
+
+    
     <div style={{ height: 500, width: '100%' }}>
       <DataGrid
         rows={filas}
@@ -88,28 +130,30 @@ const Cart = () => {
         
       />     
              <>
-             <div className="alert alert-primary" role="alert">
-                 Resumen de Compra
-                 <h3 className="cart-view-total">Total: $ { totalPrice() }</h3>
-                 <br />
-                 <Link to='/' className="nav-link active" aria-current="page" >{<button className="btn btn-info" >Terminar la compra</button>}</Link>
+             
+                <div className="alert alert-primary" role="alert">
+                    
+                    Resumen de Compra
+                    <h3 className="cart-view-total">Total: $ { totalPrice() }</h3>
+                    
+                    <br />
+                    <Button className="btn btn-info active"  onClick={handleBuy}>Terminar compra</Button>
 
-              </div>
-               
-                
-                
-                
-
+                  </div>
+                  
+                  
              </>
-             <div className="alert alert-warning" role="alert"  >
+            <div className="alert alert-warning" role="alert"  >
 
-                <Button onClick={clearCart} className="btn btn-danger active" >Vaciar carrito</Button> 
-                <Link to='/' className="nav-link active" aria-current="page" >{<button className="btn btn-success" >Volver a la tienda</button>}</Link>
-               
+                    <Button onClick={clearCart} className="btn btn-danger active" >Vaciar carrito</Button> 
+                    
+                    <Link to='/' className="nav-link active" aria-current="page" >{<button className="btn btn-success" >Volver a la tienda</button>}</Link>
+                  
+                    
 
-             </div>
+            </div>
 
-           
+                           
 
     </div>
       

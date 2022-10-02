@@ -11,7 +11,6 @@ import { collection, query, where,  getDocs } from "firebase/firestore";
 
 const ItemListContainer = ({greeting}) => {
 
-  //console.log(db);
 
   const [productos, setProductos] = useState([])
 
@@ -37,18 +36,18 @@ const ItemListContainer = ({greeting}) => {
                 //obtener los datos crudos
                 querySnapshot.forEach((doc) => {
                 // doc.data() is never undefined for query doc snapshots
-                //console.log(doc.id, " => ", doc.data());
+                
                 productosFirebase.push({id: doc.id, ...doc.data()});
               });
               
-              //console.log(productosFirebase);
+              
               
               setProductos(productosFirebase);        
 
            
                 
                 } catch (error) {
-                console.log(error);
+               
                 }
 
               })()
@@ -62,8 +61,7 @@ const ItemListContainer = ({greeting}) => {
 
   
 
-/*   console.log(productos);
- */
+
   return (
     
     <div className='titulo'>
