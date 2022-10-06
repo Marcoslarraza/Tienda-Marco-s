@@ -46,7 +46,7 @@ const ItemDetail = ({product}) => {
             <h4>{product.count}</h4>
             <br /> <br /><br />
            {!qty ? ( <ItemCount stock={product.stock} initial={1} onAdd={addCart}/> ):
-           ( <button  className='btn-success btn-outline-dark btn-lg ' onClick={handleFinish}>Agregar al carrito</button>)}
+           ( <button  className='btn-success btn-outline-dark btn-lg ' onClick={handleFinish}>Continuar con la compra</button>)}
             
         </div>
     </div>

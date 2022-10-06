@@ -10,6 +10,7 @@ const ItemList = ({products}) => {
               return <Item key={product.id} product={product} className='prod'/> //agregar card de boostrap
           })}
       </div>
+
     </div>
   )
 }

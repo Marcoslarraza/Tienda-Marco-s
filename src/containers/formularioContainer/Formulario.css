@@ -1,0 +1,25 @@
+
+
+form{
+    background-color: rgb(148, 233, 233);
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    padding: 20px 0 0 32px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 100vh;
+}
+form label{
+    font-size: 32px;
+    padding: 10px 0 10px 0 ;
+}
+form input{
+    background-color: rgb(175, 165, 184);
+    height: 50px;
+    width: 500px;
+    border: solid 2px;
+    box-shadow: 1px 1px 6px 0px rgba(114, 9, 9, 0.1) inset;
+}
+.submit{
+    margin: 12px 0 0 0;
+}

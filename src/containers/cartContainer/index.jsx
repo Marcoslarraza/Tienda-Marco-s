@@ -8,20 +8,21 @@ import { collection, addDoc, getDoc } from "firebase/firestore";
 import {db} from '../../firebase/config';
 import { doc, updateDoc } from "firebase/firestore";
 import swal from 'sweetalert';
-
-
+import { useNavigate } from "react-router-dom";
 
 
 
 
 const Cart = () => {
 
-  
-  
   const {cart, removeItem, clearCart, totalPrice} = useContext(Shop);
+  const navigate = useNavigate();
+  const Formulario = () => {        
+    navigate(('/Formulario'))        
+}
 
 
-
+  
       if (cart.length === 0) {
         return(
           <>
@@ -33,6 +34,7 @@ const Cart = () => {
           </>
         );
       }
+      
 
 
   const renderImage = (image) => {
@@ -114,12 +116,14 @@ const Cart = () => {
         
         })
       })
-  
+
+      
+
   
   return (
 
     
-    <div style={{ height: 500, width: '100%' }}>
+    <div style={{ height: 600, width: '100%' }}>
       <DataGrid
         rows={filas}
         columns={columns}
@@ -136,23 +140,19 @@ const Cart = () => {
                     Resumen de Compra
                     <h3 className="cart-view-total">Total: $ { totalPrice() }</h3>
                     
-                    <br />
-                    <Button className="btn btn-info active"  onClick={handleBuy}>Terminar compra</Button>
-
-                  </div>
-                  
-                  
-             </>
-            <div className="alert alert-warning" role="alert"  >
+                    <Button className="btn btn-info active"  onClick={Formulario}>Terminar compra</Button>
 
                     <Button onClick={clearCart} className="btn btn-danger active" >Vaciar carrito</Button> 
                     
                     <Link to='/' className="nav-link active" aria-current="page" >{<button className="btn btn-success" >Volver a la tienda</button>}</Link>
                   
                     
-
-            </div>
-
+                    
+                  </div>
+                  
+                  
+             </>
+                  
                            
 
     </div>
