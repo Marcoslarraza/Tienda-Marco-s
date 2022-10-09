@@ -57,7 +57,6 @@ const Cart = () => {
       const handleBuy = async () => {
         const importeTotal = totalPrice();
         const orden = ordenGenerada("Marcos", "markkusito@gmail.com", 3234567890, cart, importeTotal);
-        console.log(orden);
 
         // Add a new document with a generated id.
       const docRef = await addDoc(collection(db, "orders"), orden);
@@ -118,6 +117,7 @@ const Cart = () => {
       })
 
       
+      console.log(handleBuy);
 
   
   return (
@@ -140,7 +140,7 @@ const Cart = () => {
                     Resumen de Compra
                     <h3 className="cart-view-total">Total: $ { totalPrice() }</h3>
                     
-                    <Button className="btn btn-info active"  onClick={Formulario}>Terminar compra</Button>
+                    <Button className="btn btn-info active"  onClick={Formulario}>Ir al checkout</Button>
 
                     <Button onClick={clearCart} className="btn btn-danger active" >Vaciar carrito</Button> 
                     

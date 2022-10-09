@@ -31,7 +31,7 @@ const Formulario = () => {
     const orden = generarOrden(datos.name, datos.email,datos.address,datos.phone,datos.items,datos.total)
 
     const docRef = await addDoc(collection(db, "orders"), orden)
-    alert(`La compra se realizo con exito, el número de compra es: ${docRef.id}`) 
+    alert(`Muchas gracias por su compra ${datos.name}, el número de su orden es: ${docRef.id}`) 
 
     cart.forEach( async (productoOrden) => {
         const productoRef = doc(db, "products" , productoOrden.id)
@@ -44,7 +44,7 @@ const Formulario = () => {
     });
     setDatos({})
     clearCart()
-    swal('Le enviaremos los datos de la compra a su casilla de correo')
+    swal(`Le enviaremos los datos de la compra al siguiente correo:  ${datos.email}` )
     navigate('/')
    }   
 
@@ -53,10 +53,10 @@ const Formulario = () => {
    return(
     <>
         <form onSubmit={guardarDatos}>
-            <input type="text" placeholder='Nombre' name='name' onChange={capturarDatos} />
-            <input type="email" placeholder='Direccion E-mail' name='email' onChange={capturarDatos}/>
-            <input type="text" placeholder='Direccion de entrega' name='address' onChange={capturarDatos}/>
-            <input type="number" placeholder='Telefono' name='phone' onChange={capturarDatos}/>
+            <input type="text" placeholder='Nombre' name='name' onChange={capturarDatos} required/>
+            <input type="email" placeholder='Direccion E-mail' name='email' onChange={capturarDatos} required/>
+            <input type="text" placeholder='Domicilio de entrega' name='direccion' onChange={capturarDatos} required/>
+            <input type="number" placeholder='Telefono' name='tel' onChange={capturarDatos} required/>
             <button className='btn-danger'>Finalizar compra</button>
         </form>
     </>
