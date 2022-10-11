@@ -19,6 +19,7 @@ const Cart = () => {
   const navigate = useNavigate();
   const Formulario = () => {        
     navigate(('/Formulario'))        
+    
 }
 
 
@@ -117,9 +118,7 @@ const Cart = () => {
       })
 
       
-      console.log(handleBuy);
 
-  
   return (
 
     
@@ -146,7 +145,6 @@ const Cart = () => {
                     
                     <Link to='/' className="nav-link active" aria-current="page" >{<button className="btn btn-success" >Volver a la tienda</button>}</Link>
                   
-                    
                     
                   </div>
                   

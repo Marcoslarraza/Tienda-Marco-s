@@ -11,7 +11,7 @@ export  const Shop = createContext(null)
     //paso 2: crera el provider (proveedor ) que me envolvera a la app
 
  
- const ShopProvider = ({children}) => {
+ export const ShopProvider = ({children}) => {
 
     const [cart, setCart]= useState([])
 

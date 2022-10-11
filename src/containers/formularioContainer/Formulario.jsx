@@ -31,7 +31,7 @@ const Formulario = () => {
     const orden = generarOrden(datos.name, datos.email,datos.address,datos.phone,datos.items,datos.total)
 
     const docRef = await addDoc(collection(db, "orders"), orden)
-    alert(`Muchas gracias por su compra ${datos.name}, el número de su orden es: ${docRef.id}`) 
+    alert(`Muchas gracias ${datos.name}, el número de seguimiento de su compra es: ${docRef.id}`) 
 
     cart.forEach( async (productoOrden) => {
         const productoRef = doc(db, "products" , productoOrden.id)

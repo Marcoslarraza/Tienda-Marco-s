@@ -6,7 +6,6 @@ import ItemDetail from "../../components/ItemDetail";
 import { doc, getDoc } from "firebase/firestore";
 
 
-
 const ItemDetailContainer = () => {
   const [productDetail, setProductDetail] = useState({})
 
@@ -27,8 +26,8 @@ const ItemDetailContainer = () => {
 
   }, [productId])
 
-
   return     <ItemDetail product={productDetail}/> ;
+              
 
   
 

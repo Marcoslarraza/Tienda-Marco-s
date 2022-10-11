@@ -8,7 +8,6 @@ import { db } from '../../firebase/config';
 import { collection, query, where,  getDocs } from "firebase/firestore";
 
 
-
 const ItemListContainer = ({greeting}) => {
 
 
@@ -17,10 +16,11 @@ const ItemListContainer = ({greeting}) => {
   const {categoryId}= useParams();
 
 
+
+
   useEffect(()=> {
     
     (async ()=> {
-      
 
         try {
   
@@ -40,12 +40,8 @@ const ItemListContainer = ({greeting}) => {
                 productosFirebase.push({id: doc.id, ...doc.data()});
               });
               
-              
-              
               setProductos(productosFirebase);        
-
-           
-                
+              
                 } catch (error) {
                
                 }
@@ -53,22 +49,15 @@ const ItemListContainer = ({greeting}) => {
               })()
 
           }, [categoryId])
-  
-
-  
-
-  
-
-  
-
 
   return (
     
     <div className='titulo'>
       
+    
+      
        <ItemList products={productos}/>
 
-      
     </div>
   )
 }

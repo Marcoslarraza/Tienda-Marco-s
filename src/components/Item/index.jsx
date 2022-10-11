@@ -12,9 +12,9 @@ const Item = ({product}) => {
 
   const navigate= useNavigate();
   const handleNavigate=()=>{
+    
       navigate(`/detail/${product.id}`)
   }
-
 
 
   return (

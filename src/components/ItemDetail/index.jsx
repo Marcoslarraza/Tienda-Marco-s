@@ -30,6 +30,7 @@ const ItemDetail = ({product}) => {
 
   }
 
+
   return (
     
     <div id='cuerpo'>
