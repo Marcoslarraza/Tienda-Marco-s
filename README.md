@@ -1,7 +1,18 @@
-# Preentrega
+# E-Commerce PizzaUy
 
-El siguiente proyecto es un e-comerce basado en el llamado a una Api con un catalogo de productos, los cuales se filtran por categoría.
+En este proyecto se desarrollo un E-Commerce para la entrega de proyecto final del curso React Js de Coderhouse. El mismo tiene la finalidad de simular una tienda de venta de artículos variados en la que se puede agregar varios items al carrito de compras.
 
-# screenshot
 
-../Captura%20de%20Pantalla%202022-09-09%20a%20la(s)%2000.36.03.png
+
+# Librerías-Dependencias utilizadas
+
+Sweet-Alert
+Material UI
+React JS
+Bootstrap
+web-vitals
+
+## Uso de Firebase
+
+El proyecto usa está conectado con la interfaz de Firebase, simulando una conexión back-end.
+En la misma están incluidos los productos y sus detalles (categorías, precios, stock, descripción e imagen)
