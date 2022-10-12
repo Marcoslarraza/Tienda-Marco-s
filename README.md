@@ -14,5 +14,5 @@ web-vitals
 
 ## Uso de Firebase
 
-El proyecto usa está conectado con la interfaz de Firebase, simulando una conexión back-end.
+El proyecto está conectado con la interfaz de Firebase, simulando una conexión back-end.
 En la misma están incluidos los productos y sus detalles (categorías, precios, stock, descripción e imagen)

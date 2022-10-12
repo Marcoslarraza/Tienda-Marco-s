@@ -6,12 +6,13 @@ import ItemList from '../../components/ItemList';
 import { useParams } from 'react-router-dom';
 import { db } from '../../firebase/config';
 import { collection, query, where,  getDocs } from "firebase/firestore";
-
+import {Loader} from '../../components/Loader/Loader';
 
 const ItemListContainer = ({greeting}) => {
 
 
   const [productos, setProductos] = useState([])
+  const [Loading, setLoading] = useState ();
 
   const {categoryId}= useParams();
 
@@ -23,6 +24,7 @@ const ItemListContainer = ({greeting}) => {
     (async ()=> {
 
         try {
+          setLoading(true);
   
             const q = categoryId?
             query(collection(db, "products"), where ('category', '==', categoryId) )
@@ -45,19 +47,24 @@ const ItemListContainer = ({greeting}) => {
                 } catch (error) {
                
                 }
-
+                setLoading(false);
               })()
 
           }, [categoryId])
+
+          console.log(Loading);
 
   return (
     
     <div className='titulo'>
       
+      {productos.length!== 0 ? <ItemList products={productos}/> : <Loader/>}
+
+
     
       
-       <ItemList products={productos}/>
-
+{/*        <ItemList products={productos}/>
+ */}
     </div>
   )
 }

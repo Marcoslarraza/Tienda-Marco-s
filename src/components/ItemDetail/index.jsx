@@ -5,10 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { Shop } from '../../context/ShopProvider';
 
-
-
 const ItemDetail = ({product}) => {
-
 
   const [qty, setQty]= useState(0);
   const navigate= useNavigate();
