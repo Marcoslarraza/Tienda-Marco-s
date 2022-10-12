@@ -50,9 +50,8 @@ const ItemListContainer = ({greeting}) => {
                 setLoading(false);
               })()
 
-          }, [categoryId])
+          }, [categoryId, Loading])
 
-          console.log(Loading);
 
   return (
     
