@@ -1,11 +1,15 @@
 import { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import './Formulario.css';
-import {Shop} from '../../context/ShopProvider'
+import {Shop} from '../../context/ShopProvider';
+import swal from 'sweetalert';
+
+
 import generarOrden from '../../services/generarOrden';
 import { db } from '../../firebase/config';
 import { collection, addDoc, getDoc ,doc, updateDoc } from "firebase/firestore";
-import { useNavigate } from 'react-router-dom';
-import swal from 'sweetalert';
+
 
 
 const Formulario = () => {
@@ -31,6 +35,9 @@ const Formulario = () => {
     const orden = generarOrden(datos.name, datos.email,datos.address,datos.phone,datos.items,datos.total)
 
     const docRef = await addDoc(collection(db, "orders"), orden)
+
+    
+    //se muestran mensajes con el numero de orden de la compra
     alert(`Muchas gracias ${datos.name}, el número de seguimiento de su compra es: ${docRef.id}`) 
 
     cart.forEach( async (productoOrden) => {
@@ -44,11 +51,13 @@ const Formulario = () => {
     });
     setDatos({})
     clearCart()
+
+    //Se muestra mensaje informando como proseguir con el seguimiento de la compra
+
     swal(`Le enviaremos los datos de la compra al siguiente correo:  ${datos.email}` )
     navigate('/')
    }   
 
-   //BUSCAR UN FORMtO DE FORMULARIO MAS CHETO!
 
    return(
     <>

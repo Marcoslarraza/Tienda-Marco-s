@@ -1,62 +1,32 @@
-.loader{
-    display: block;
-    position: relative;
-    height: 60px;
-    width: 1000px;
-    background: #fff;
-    border:2px solid #fff;
-    color: red;
-    overflow: hidden;
-    margin-bottom: 600px;
-    margin-left: 60px;
-  }
-  .loader::before{
-    content: '';
-    background: red;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 0;
-    height: 100%;
-    animation: loading 10s linear infinite;
-  }
-  .loader:after{
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    font-size: 24px;
-    line-height: 32px;
-    color: rgb(0,255,255);
-    mix-blend-mode: difference;
-    animation: percentage 10s linear infinite;
-  }
+.spinner {
+  display: flex;
+  justify-content: center;
+  border: 4px solid rgba(0, 0, 0, .1);
+  border-left-color: transparent;
+  border-radius: 50%;
+}
+.spinner {
+  border: 4px solid rgba(244, 12, 12, 0.1);
+  border-left-color: transparent;
+  width: 36px;
+  height: 36px;
+  margin-left: 800px;
+}
+
+.spinner {
+  border: 4px solid rgba(6, 0, 0, 0.1);
+  border-left-color: black;
+  width: 36px;
+  height: 36px;
   
-  @keyframes loading {
-    0% { width: 0 }
-    100% { width: 100% }
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
-  @keyframes percentage {
-    0% { content: "0%"}
-    5% { content: "5%"}
-    10% { content: "10%"}
-    20% { content: "20%"}
-    30% { content: "30%"}
-    40% { content: "40%"}
-    50% { content: "50%"}
-    60% { content: "60%"}
-    70% { content: "70%"}
-    80% { content: "80%"}
-    90% { content: "90%"}
-    95% { content: "95%"}
-    96% { content: "96%"}
-    97% { content: "97%"}
-    98% { content: "98%"}
-    99% { content: "99%"}
-    100% { content: "100%"}
+
+  100% {
+    transform: rotate(360deg);
   }
-  
-  
+}

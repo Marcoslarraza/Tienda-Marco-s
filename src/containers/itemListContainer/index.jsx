@@ -1,17 +1,25 @@
 import React from 'react';
-import './styles.css';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import ItemList from '../../components/ItemList';
 import { useParams } from 'react-router-dom';
+
+
+import './styles.css';
+import {Loader} from '../../components/Loader/Loader';
+
+
+import ItemList from '../../components/ItemList';
 import { db } from '../../firebase/config';
 import { collection, query, where,  getDocs } from "firebase/firestore";
-import {Loader} from '../../components/Loader/Loader';
+
+
 
 const ItemListContainer = ({greeting}) => {
 
-
+  //hooks para el uso de componentes 
   const [productos, setProductos] = useState([])
+
+  //eslint-disable-next-line
   const [Loading, setLoading] = useState ();
 
   const {categoryId}= useParams();
@@ -24,6 +32,8 @@ const ItemListContainer = ({greeting}) => {
     (async ()=> {
 
         try {
+
+          //se importa un loader-component para que el usuario vea que la pag esta trabajando
           setLoading(true);
   
             const q = categoryId?
@@ -37,7 +47,6 @@ const ItemListContainer = ({greeting}) => {
               
                 //obtener los datos crudos
                 querySnapshot.forEach((doc) => {
-                // doc.data() is never undefined for query doc snapshots
                 
                 productosFirebase.push({id: doc.id, ...doc.data()});
               });
@@ -49,9 +58,10 @@ const ItemListContainer = ({greeting}) => {
                 }
                 setLoading(false);
               })()
+              
+          }, [categoryId]) 
 
-          }, [categoryId, Loading])
-
+          
 
   return (
     
@@ -60,10 +70,6 @@ const ItemListContainer = ({greeting}) => {
       {productos.length!== 0 ? <ItemList products={productos}/> : <Loader/>}
 
 
-    
-      
-{/*        <ItemList products={productos}/>
- */}
     </div>
   )
 }

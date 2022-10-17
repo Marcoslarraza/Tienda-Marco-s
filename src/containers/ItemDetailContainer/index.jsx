@@ -1,9 +1,12 @@
-import { getFirestore } from 'firebase/firestore';
 import React from 'react'
 import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
+
 import ItemDetail from "../../components/ItemDetail";
+
 import { doc, getDoc } from "firebase/firestore";
+import { getFirestore } from 'firebase/firestore';
+
 
 
 const ItemDetailContainer = () => {
@@ -13,7 +16,7 @@ const ItemDetailContainer = () => {
 
   const {productId}= useParams();
 
-  //Gestionar la obtención de la data del detalle
+  //Gestiona la obtención de la data del detalle
   useEffect(()=> {
 
     

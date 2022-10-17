@@ -1,14 +1,15 @@
 import React, { }  from 'react';
-import Navbar from '../components/Navbar';
-import { } from 'bootstrap'; 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemListContainers from '../containers/ItemListContainer';
-import ItemDetailContainer from '../containers/ItemDetailContainer';
 import {
   BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
+
+import Navbar from '../components/Navbar';
+import { } from 'bootstrap'; 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ItemListContainers from '../containers/ItemListContainer';
+import ItemDetailContainer from '../containers/ItemDetailContainer';
 import NotFound from '../components/NotFound/';
 import Cart  from '../containers/cartContainer';
 import ShopProvider from '../context/ShopProvider';

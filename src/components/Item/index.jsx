@@ -1,7 +1,8 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
+
 import './styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useNavigate } from 'react-router-dom';
 
 
 
@@ -13,7 +14,8 @@ const Item = ({product}) => {
   const navigate= useNavigate();
   const handleNavigate=()=>{
     
-      navigate(`/detail/${product.id}`)
+    navigate(`/detail/${product.id}`)
+
   }
 
 
@@ -26,8 +28,6 @@ const Item = ({product}) => {
           <h6>Stock: {product.stock}</h6>
           <h6> Precio $ {product.price}</h6>
           
-
-
       </div>
   
     

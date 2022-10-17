@@ -1,9 +1,11 @@
 import React, {useContext, useState} from 'react'
-import ItemCount from '../ItemCount'
-import './styles.css'
 import { useNavigate } from 'react-router-dom';
 
+import ItemCount from '../ItemCount'
+import './styles.css'
 import { Shop } from '../../context/ShopProvider';
+
+
 
 const ItemDetail = ({product}) => {
 

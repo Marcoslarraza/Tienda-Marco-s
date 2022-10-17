@@ -1,14 +1,18 @@
 import React, { useContext} from 'react'
+import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom'
+
+
 import { Shop } from '../../context/ShopProvider';
+
 import { DataGrid } from '@mui/x-data-grid';
 import { Button } from '@mui/material';
-import { Link } from 'react-router-dom'
 import ordenGenerada from '../../services/generarOrden';
 import { collection, addDoc, getDoc } from "firebase/firestore";
 import {db} from '../../firebase/config';
 import { doc, updateDoc } from "firebase/firestore";
+
 import swal from 'sweetalert';
-import { useNavigate } from "react-router-dom";
 
 
 
@@ -55,6 +59,7 @@ const Cart = () => {
         )
       }
 
+         //eslint-disable-next-line
       const handleBuy = async () => {
         const importeTotal = totalPrice();
         const orden = ordenGenerada("Marcos", "markkusito@gmail.com", 3234567890, cart, importeTotal);
@@ -121,7 +126,7 @@ const Cart = () => {
   return (
 
     
-    <div style={{ height: 600, width: '100%' }}>
+    <div style={{ height: 400, width: '100%' }}>
       <DataGrid
         rows={filas}
         columns={columns}

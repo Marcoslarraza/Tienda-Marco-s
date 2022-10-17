@@ -1,7 +1,9 @@
 .footerContainer{
     background: rgb(4, 4, 4);
-    padding: 15px 0 30px;
+    padding: 7px 0 10px;
     bottom: 0%;
+    width: 100%;
+    position:fixed;
     
    
     
@@ -17,10 +19,10 @@
 .text{
     text-align: center;
     color: #f7f7f2;
-    padding: 0.5rem 0.5rem 0;
+    padding: 0.3rem 0.3rem 0;
 }
 svg {
-    fill: #27e024;
+    fill: #fcfcfc;
     margin-right: 0.5rem;
     font-size: 1.5rem;
     font-weight: 500;

@@ -1,7 +1,9 @@
 import React from 'react';
 import {HiShoppingCart} from 'react-icons/hi';
-import { Shop } from '../../context/ShopProvider';
 import { useContext } from 'react';
+
+import { Shop } from '../../context/ShopProvider';
+
 
 
 
