@@ -5,7 +5,7 @@
     width: 100%;
     background-color: grey;
     
-    background-attachment: fixed;
-    background-size: cover;
+    background-attachment:fixed;
+    background-size:contain;
 }
 
